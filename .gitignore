@@ -5,6 +5,7 @@ __pycache__/
 venv/
 
 # Vendor software and backups (proprietary, large)
+software/
 *.asar
 *.asar.bak
 *.bak
