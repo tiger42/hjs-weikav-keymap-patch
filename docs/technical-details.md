@@ -110,7 +110,15 @@ For media and system functions, the software does not send USB usages but 8-bit 
 | Email | `B1` | `0x18A` |
 | Calculator (not in the software) | `B0` | – not translated |
 
-Codes between `A0` and `B1` that are not in the chain are passed on unchanged as consumer usage. Mute therefore arrives as `0x00A2` instead of `0x00E2`, and Calculator as `0x00B0` instead of `0x0192`, and Windows ignores both. Custom key entries cannot reach these usages in another way. An entry with additional bits in the first byte is treated as a modifier combination, never as a media key.
+Codes between `A0` and `B1` that are not in the chain are passed on unchanged as consumer usage. Mute therefore arrives as `0x00A2` instead of `0x00E2`, and Calculator as `0x00B0` instead of `0x0192`, and Windows ignores both.
+
+Custom key entries cannot reach these usages in another way either. The firmware stores the two bytes per key unchanged as a 16-bit value (first byte × 256 + second byte):
+
+- On the base layer and the Fn layer, it only uses a value with the custom flag `0x80` in the first byte. For anything else it falls back to its factory keymap.
+- Values with the custom flag always go through the chain above. If the first byte has additional bits, they count as modifiers, so `83 E2` becomes Ctrl+Shift+Left Alt.
+- The Fn2 layer takes every value as it is, but also sends it through the same translation, because the Fn key is not held.
+
+The firmware's own internal format (see below), where `03E2` means Mute, is only used for factory values while Fn is held.
 
 Tests confirmed this: a Mute button made visible in the software did nothing on the Lucky65, and a Calculator code did nothing on the AL75. The firmware itself does know Mute, but only in its built-in Fn layers. In the Fn+F1…F12 table from the manual, Fn+F10 is Mute.
 
