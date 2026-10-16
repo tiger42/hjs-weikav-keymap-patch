@@ -40,7 +40,7 @@ Also known as: 102nd key, ISO key, Non-US backslash, `<>` key · Taste `<>` · t
 ¹ The Fn key is already clickable in this software (not tested with the keyboard).
 ² This software has no Fn layer buttons.
 
-**Tested** means tested with the keyboard on Windows 11. For the other programs, the installer was unpacked without running it, and the patches were applied and reverted. If you own one of these keyboards, please open an issue and report whether it works.
+**Tested** means tested on Windows 11 with my own [HJS AL75 V2](https://keyshelf.app/en/gallery/Olli/75) and [Weikav Lucky65](https://keyshelf.app/en/gallery/Olli/97). For the other programs, the installer was unpacked without running it, and the patches were applied and reverted. If you own one of these keyboards, please open an issue and report whether it works.
 
 **Weikav Lucky65:** The patch is for the **Lucky65 v1**, which you set up with the Weikav software (`lucky65_3M keyboard.exe`). The Lucky65 v2 and v3 use VIA, which can assign the ISO key directly.
 
