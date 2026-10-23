@@ -1,6 +1,6 @@
-# HJS AL75 & Weikav Lucky65 Keymap Patch – ISO key `<>|` and remappable Fn key
+# HJS AL75, Weikav Lucky65 & Womier SK65 Keymap Patch – ISO key `<>|` and remappable Fn key
 
-The **HJS AL75** and the **Weikav Lucky65 (v1)** in their ANSI versions have no ISO key, also called the 102nd key (`<>|` on a German layout). Their vendor software cannot assign that key to another key either, and it locks the Fn key and the Fn layers.
+The **HJS AL75 (V2)**, the **Weikav Lucky65 (v1)** and the **Womier SK65 (V1)** in their ANSI versions have no ISO key, also called the 102nd key (`<>|` on a German layout). Their vendor software cannot assign that key to another key either, and it locks the Fn layers and, on some keyboards, the Fn key.
 
 This small Python script patches the vendor software and unlocks all three. The same software also ships with the **HJS AL65**, **HJS AL70**, **Weikav Sugar65** and **Weikav D75**, so the script should work for them as well.
 
@@ -34,6 +34,7 @@ Also known as: 102nd key, ISO key, Non-US backslash, `<>` key · Taste `<>` · t
 | [HJS AL65 Wireless](https://hjskeys.com/software-firmware/) | `AL65_3M Keyboard.exe` | ✓ | not needed¹ | ✓ | |
 | [HJS AL70](https://hjskeys.com/software-firmware/) | `AL70_3M Keyboard.exe` | ✓ | not needed¹ | ✓ | |
 | [Weikav D75](https://weikav.com/waikv-software/) | `D75 Keyboard.exe` | ✓ | not needed¹ | ✓ | |
+| [Womier SK65 (V1)](https://womierkeyboard.com/pages/softwares) | `SK65_3M Keyboard.exe` | ✓ | not needed¹ | ✓ | |
 | [HJS AL65 Wired](https://hjskeys.com/software-firmware/) | `AL65_Series.exe` | ✓ | not needed¹ | –² | |
 | [Weikav Sugar65](https://weikav.com/waikv-software/) | `L66_Series.exe` | ✓ | not needed¹ | –² | |
 
@@ -42,9 +43,14 @@ Also known as: 102nd key, ISO key, Non-US backslash, `<>` key · Taste `<>` · t
 
 **Tested** means tested on Windows 11 with my own [HJS AL75 V2](https://keyshelf.app/en/gallery/Olli/75) and [Weikav Lucky65](https://keyshelf.app/en/gallery/Olli/97). For the other programs, the installer was unpacked without running it, and the patches were applied and reverted. If you own one of these keyboards, please open an issue and report whether it works.
 
-**Weikav Lucky65:** The patch is for the **Lucky65 v1**, which you set up with the Weikav software (`lucky65_3M keyboard.exe`). The Lucky65 v2 and v3 use VIA, which can assign the ISO key directly.
+**Weikav Lucky65:** The patch is for the **Lucky65 v1**, which you set up with the Weikav software (`lucky65_3M keyboard.exe`).
 
-**Not compatible** (different software): HJS AL75 v1, Weikav WK75 and WK68 (`OemDrv.exe`), Weikav ONE75 (`DeviceDriver.exe`), Weikav WK100 ("ROYUAN Driver"). The **YUNZII AL75** is a different keyboard from another brand.
+**Womier SK65:** A Lucky65 v1 sold by Womier, with a knob in place of the Insert key. The patch is for the **SK65 V1** with Womier's own software (`SK65_3M Keyboard.exe`).
+
+**Not supported:**
+- **Keyboards with VIA:** Weikav Lucky65 v2 and v3, Womier SK65 V2. VIA can assign the ISO key directly, so they do not need this patch.
+- **Different software:** HJS AL75 V1, Weikav WK75 and WK68 (`OemDrv.exe`), Weikav ONE75 (`DeviceDriver.exe`), Weikav WK100 ("ROYUAN Driver"), all other Womier keyboards.
+- The **YUNZII AL75** is a different keyboard from another brand.
 
 ## Usage
 
@@ -128,7 +134,7 @@ Both brands appear online under several names:
 
 ## Summary in German / Kurzfassung auf Deutsch
 
-Auf ANSI-Tastaturen wie der HJS AL75 und der Weikav Lucky65 (v1) fehlt die Taste `<>|`, und die Herstellersoftware kann sie auch keiner anderen Taste zuweisen. Dieses Skript schaltet sie in der Software frei, außerdem lassen sich die Fn-Taste und die Fn-Ebenen belegen. Software beenden, Eingabeaufforderung als Administrator öffnen und ausführen:
+Auf ANSI-Tastaturen wie der HJS AL75 (V2), der Weikav Lucky65 (v1) und der Womier SK65 (V1) fehlt die Taste `<>|`, und die Herstellersoftware kann sie auch keiner anderen Taste zuweisen. Dieses Skript schaltet sie in der Software frei, außerdem lassen sich die Fn-Taste und die Fn-Ebenen belegen. Software beenden, Eingabeaufforderung als Administrator öffnen und ausführen:
 
 ```
 python "C:\Pfad\zu\keymap_patch.py" "C:\Program Files (x86)\AL75_3M Keyboard\resources\app.asar" --all
@@ -142,4 +148,4 @@ Danach in der Software im Tab „System“ die Funktion „ISO-Key <>|“ einer 
 
 ## Disclaimer
 
-This is an unofficial community patch. It is not affiliated with or endorsed by HJS / Heiji Snake (黑吉蛇) or Weikav. You use it at your own risk. The script only modifies the desktop software, not the keyboard firmware, and you can undo it with `--revert` or by reinstalling the software.
+This is an unofficial community patch. It is not affiliated with or endorsed by HJS / Heiji Snake (黑吉蛇), Weikav or Womier. You use it at your own risk. The script only modifies the desktop software, not the keyboard firmware, and you can undo it with `--revert` or by reinstalling the software.

@@ -1,5 +1,5 @@
 """
-Patch for the HJS / Weikav keyboard software (e.g. "AL75_3M Keyboard", "lucky65_3M keyboard"):
+Patch for the HJS / Weikav / Womier keyboard software (e.g. "AL75_3M Keyboard", "lucky65_3M keyboard", "SK65_3M Keyboard"):
 unlocks keys and functions that the software does not let you assign.
 
 --iso        The software translates K-codes into HID codes via a table (backend/others/SupportData.js).
