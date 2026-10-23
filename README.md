@@ -1,6 +1,6 @@
 # HJS AL75, Weikav Lucky65 & Womier SK65 Keymap Patch – ISO key `<>|` and remappable Fn key
 
-The **HJS AL75 (V2)**, the **Weikav Lucky65 (v1)** and the **Womier SK65 (V1)** in their ANSI versions have no ISO key, also called the 102nd key (`<>|` on a German layout). Their vendor software cannot assign that key to another key either, and it locks the Fn layers and, on some keyboards, the Fn key.
+The **HJS AL75 V2**, the **Weikav Lucky65** (V1) and the **Womier SK65** (V1) in their ANSI versions have no ISO key, also called the 102nd key (`<>|` on a German layout). Their vendor software cannot assign that key to another key either, and it locks the Fn layers and, on some keyboards, the Fn key.
 
 This small Python script patches the vendor software and unlocks all three. The same software also ships with the **HJS AL65**, **HJS AL70**, **Weikav Sugar65** and **Weikav D75**, so the script should work for them as well.
 
@@ -30,11 +30,11 @@ Also known as: 102nd key, ISO key, Non-US backslash, `<>` key · Taste `<>` · t
 | Keyboard | Program | `--iso` | `--fn-key` | `--fn-layers` | Tested |
 |---|---|---|---|---|---|
 | [HJS AL75 V2](https://hjskeys.com/software-firmware/) | `AL75_3M Keyboard.exe` | ✓ | ✓ | ✓ | ✓ |
-| [Weikav Lucky65 (v1)](https://weikav.com/waikv-software/) | `lucky65_3M keyboard.exe` | ✓ | ✓ | ✓ | ✓ |
+| [Weikav Lucky65](https://weikav.com/waikv-software/) (V1) | `lucky65_3M keyboard.exe` | ✓ | ✓ | ✓ | ✓ |
 | [HJS AL65 Wireless](https://hjskeys.com/software-firmware/) | `AL65_3M Keyboard.exe` | ✓ | not needed¹ | ✓ | |
 | [HJS AL70](https://hjskeys.com/software-firmware/) | `AL70_3M Keyboard.exe` | ✓ | not needed¹ | ✓ | |
 | [Weikav D75](https://weikav.com/waikv-software/) | `D75 Keyboard.exe` | ✓ | not needed¹ | ✓ | |
-| [Womier SK65 (V1)](https://womierkeyboard.com/pages/softwares) | `SK65_3M Keyboard.exe` | ✓ | not needed¹ | ✓ | |
+| [Womier SK65](https://womierkeyboard.com/pages/softwares) (V1) | `SK65_3M Keyboard.exe` | ✓ | not needed¹ | ✓ | |
 | [HJS AL65 Wired](https://hjskeys.com/software-firmware/) | `AL65_Series.exe` | ✓ | not needed¹ | –² | |
 | [Weikav Sugar65](https://weikav.com/waikv-software/) | `L66_Series.exe` | ✓ | not needed¹ | –² | |
 
@@ -43,13 +43,13 @@ Also known as: 102nd key, ISO key, Non-US backslash, `<>` key · Taste `<>` · t
 
 **Tested** means tested on Windows 11 with my own [HJS AL75 V2](https://keyshelf.app/en/gallery/Olli/75) and [Weikav Lucky65](https://keyshelf.app/en/gallery/Olli/97). For the other programs, the installer was unpacked without running it, and the patches were applied and reverted. If you own one of these keyboards, please open an issue and report whether it works.
 
-**Weikav Lucky65:** The patch is for the **Lucky65 v1**, which you set up with the Weikav software (`lucky65_3M keyboard.exe`).
+**Weikav Lucky65:** The patch is for the Lucky65 **V1**, which you set up with the Weikav software (`lucky65_3M keyboard.exe`).
 
-**Womier SK65:** A Lucky65 v1 sold by Womier, with a knob in place of the Insert key. The patch is for the **SK65 V1** with Womier's own software (`SK65_3M Keyboard.exe`).
+**Womier SK65:** A Lucky65 (V1) sold by Womier, with a knob in place of the Insert key. The patch is for the SK65 **V1** with Womier's own software (`SK65_3M Keyboard.exe`).
 
 **Not supported:**
-- **Keyboards with VIA:** Weikav Lucky65 v2 and v3, Womier SK65 V2. VIA can assign the ISO key directly, so they do not need this patch.
-- **Different software:** HJS AL75 V1, Weikav WK75 and WK68 (`OemDrv.exe`), Weikav ONE75 (`DeviceDriver.exe`), Weikav WK100 ("ROYUAN Driver"), all other Womier keyboards.
+- **Keyboards with VIA:** Weikav Lucky65 V2 and V3, Womier SK65 V2. VIA can assign the ISO key directly, so they do not need this patch.
+- **Different software:** HJS AL75 (V1), Weikav WK75 and WK68 (`OemDrv.exe`), Weikav ONE75 (`DeviceDriver.exe`), Weikav WK100 ("ROYUAN Driver"), all other Womier keyboards.
 - The **YUNZII AL75** is a different keyboard from another brand.
 
 ## Usage
@@ -130,11 +130,11 @@ Both brands appear online under several names:
 | **HJS Keys** / **HJSkeys** | Name used on hjskeys.com |
 | **Weikav** / **WEIKAV** | Brand of the Lucky65, Sugar65 and D75 |
 | **Waikv** | Spelling used on Weikav's download page |
-| **Lucky65** / **Lucky 65** / **Lucky-65** | The v1 software and its folders use the name `Lucky65_3M` |
+| **Lucky65** / **Lucky 65** / **Lucky-65** | The V1 software and its folders use the name `Lucky65_3M` |
 
 ## Summary in German / Kurzfassung auf Deutsch
 
-Auf ANSI-Tastaturen wie der HJS AL75 (V2), der Weikav Lucky65 (v1) und der Womier SK65 (V1) fehlt die Taste `<>|`, und die Herstellersoftware kann sie auch keiner anderen Taste zuweisen. Dieses Skript schaltet sie in der Software frei, außerdem lassen sich die Fn-Taste und die Fn-Ebenen belegen. Software beenden, Eingabeaufforderung als Administrator öffnen und ausführen:
+Auf ANSI-Tastaturen wie der HJS AL75 V2, der Weikav Lucky65 (V1) und der Womier SK65 (V1) fehlt die Taste `<>|`, und die Herstellersoftware kann sie auch keiner anderen Taste zuweisen. Dieses Skript schaltet sie in der Software frei, außerdem lassen sich die Fn-Taste und die Fn-Ebenen belegen. Software beenden, Eingabeaufforderung als Administrator öffnen und ausführen:
 
 ```
 python "C:\Pfad\zu\keymap_patch.py" "C:\Program Files (x86)\AL75_3M Keyboard\resources\app.asar" --all

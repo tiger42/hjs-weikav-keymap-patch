@@ -6,7 +6,7 @@ Background for [`keymap_patch.py`](../keymap_patch.py). You do not need any of t
 
 All supported programs share one code base; only the name, the keyboard layouts and some details differ. They are Electron apps (Electron 4.0.0). The JavaScript and HTML are packed into `resources\app.asar`, and parts of the JavaScript are obfuscated (javascript-obfuscator string arrays). The UI is Angular 2.4 and loads its HTML templates at runtime. The "3M" versions of the AL75, AL65 Wireless, AL70, Lucky65, D75 and SK65 all talk to the USB device ID `0603:0351`.
 
-The Womier SK65 software is a copy of the Lucky65 v1 software: the same function table, and the same key list except the Insert key, where the SK65 has a knob. It only offers the ANSI layout; the Lucky65 software also has ISO and split space bar layouts.
+The Womier SK65 software is a copy of the Lucky65 V1 software: the same function table, and the same key list except the Insert key, where the SK65 has a knob. It only offers the ANSI layout; the Lucky65 software also has ISO and split space bar layouts.
 
 An asar archive is a JSON index (name, offset and size of every file) followed by the file contents. The script reads the index, locates the files it needs and replaces byte patterns inside them. Every replacement has exactly the same length as the original, so no offset changes and the archive does not need to be rebuilt. Where a replacement is shorter, it is padded with spaces at a place where whitespace has no effect.
 
@@ -44,7 +44,7 @@ In `components/app.component.html`, the clickable areas over the keyboard pictur
 
 The patch changes `'none'` to `'auto'`. The firmware treats Fn as an ordinary code in the keymap: the factory keymap has `0xFE` at the Fn position, and the software's "Fn" button (`K189`) sends the same `0xFE` ("Fn2", `K190`, sends `0xFF`). The software already handles a key assigned to Fn: it puts it on the base layer and on the Fn layer.
 
-Only the AL75 V2 and Lucky65 v1 builds contain this lock. In the other programs, the Fn key has a normal clickable area and no lock.
+Only the AL75 V2 and Lucky65 V1 builds contain this lock. In the other programs, the Fn key has a normal clickable area and no lock.
 
 ## `--fn-layers`: Fn layers
 
